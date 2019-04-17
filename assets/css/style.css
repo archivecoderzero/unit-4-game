@@ -1,0 +1,15 @@
+body { 
+    /* background-image : url(../../assets/images/bg_c2.gif); */
+    height: 100%; 
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.crystals {
+    width: 20 vw;
+    max-width: 20vw;
+    margin: 5% auto;
+    text-align: center;
+}

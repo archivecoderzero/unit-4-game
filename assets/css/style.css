@@ -1,15 +1,62 @@
 body { 
-    /* background-image : url(../../assets/images/bg_c2.gif); */
+    background-image : url(../../assets/images/bg_c2.gif);
     height: 100%; 
      background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 
 }
 
-.crystals {
-    width: 20 vw;
-    max-width: 20vw;
+#crystals {
+    width: 100px;
+    height: 100px;
     margin: 5% auto;
     text-align: center;
 }
+
+.jumbotron  {
+    background-image: url(../../assets/images/bg_c4.gif);
+    font-family: 'Fascinate Inline', cursive;
+}
+
+.lead {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.footercont {
+    background: #3b5998;
+    grid-row-start: 15;
+    grid-row-end: 17;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+
+    }
+
+#numToBeat {
+    font-size: 30px;
+}
+
+#wins {
+    font-size: 30px;
+}
+
+#loss {
+    font-size: 30px;
+}
+
+#currentCollect {
+    font-size: 30px;
+}
+
+html {
+    height: 100%;
+  }
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }

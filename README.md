@@ -5,6 +5,11 @@
 ## Version 0.1 : 04/16/19
 > main iteration of the psuedocode in game.js
 
+## Version 0.4 : 04/19/19
+> assets and css completed
+> generate random numbers
+> Onclck events
+
 
 
 

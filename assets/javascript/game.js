@@ -68,40 +68,53 @@ function roundOver(){
 function winChecker() {
     if (currentCollect == randomToBeat)
     {
+    $('audio#win')[0].play();
     $("#currentCollect").text(currentCollect)
     wins++;
     $("#wins").text(wins);
-    setTimeout(alerter, 300);
+    setTimeout(alerter, 50);
     function alerter() {
         alert("you win");
         roundOver();
+        resetImage();
+
 };
     
 
 }
 }
 
+function resetImage(){
+    $("#chest1").attr("src","assets/images/chest.png" );
+    $("#chest2").attr("src","assets/images/chest.png" );
+    $("#chest3").attr("src","assets/images/chest.png" );
+    $("#chest4").attr("src","assets/images/chest.png" );
+}
+
 //fucntion for losing , add some stats after
 function gameOver() {
+    $('audio#lose')[0].play();
     $("#currentCollect").text(currentCollect)
     loss++;
     $("#loss").text(loss);
-    setTimeout(alerter, 300);
+    setTimeout(alerter, 50);
     function alerter() {
         alert("you loss");
         roundOver();
-
+        resetImage();
     };
   
-
 }
+
+
 
 /// onclick even for all the crystal colors 
 
 $( "#crystalGreen" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem1;
-    $("#currentCollect").text(currentCollect)
+    $("#chest1").attr("src","assets/images/crys1.gif" );
+    $("#currentCollect").text(currentCollect);
     if (currentCollect > randomToBeat) {
         gameOver();
     }
@@ -112,6 +125,9 @@ $( "#crystalGreen" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem2;
     $("#currentCollect").text(currentCollect)
+    $("#chest2").attr("src","assets/images/crys2.gif" );
+
+    $('audio#click')[0].play();
     if (currentCollect > randomToBeat) {
         gameOver();
     }
@@ -122,16 +138,22 @@ $( "#crystalGreen" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem3;
     $("#currentCollect").text(currentCollect)
+    $("#chest3").attr("src","assets/images/crys3.gif" );
+
+    $('audio#click')[0].play();
     if (currentCollect > randomToBeat) {
         gameOver();
     }
     else  winChecker();
 });
 
+
 $( "#crystalYellow" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem4;
     $("#currentCollect").text(currentCollect)
+    $("#chest4").attr("src","assets/images/crys4.gif" );
+
     if (currentCollect > randomToBeat) {
         gameOver();
     }
@@ -140,6 +162,7 @@ $( "#crystalYellow" ).click(function() {
 
 
 //// start the game :
+
 
 generateRandoms();
 displayVars();

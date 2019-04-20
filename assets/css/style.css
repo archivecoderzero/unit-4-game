@@ -6,10 +6,10 @@ body {
 
 }
 
-#crystals {
+.crystals {
     width: 100px;
     height: 100px;
-    margin: 5% auto;
+    margin-left: 25%;
     text-align: center;
 }
 
@@ -21,20 +21,6 @@ body {
 .lead {
     font-family: 'Share Tech Mono', monospace;
 }
-
-.footercont {
-    background: #3b5998;
-    grid-row-start: 15;
-    grid-row-end: 17;
-}
-
-.footer {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-
-    }
-
 #numToBeat {
     font-size: 30px;
 }

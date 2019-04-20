@@ -93,12 +93,12 @@ function resetImage(){
 
 //fucntion for losing , add some stats after
 function gameOver() {
-    $('audio#lose')[0].play();
     $("#currentCollect").text(currentCollect)
     loss++;
     $("#loss").text(loss);
-    setTimeout(alerter, 50);
+    setTimeout(alerter, 3000);
     function alerter() {
+        $('audio#lose')[0].play();
         alert("you loss");
         roundOver();
         resetImage();
@@ -166,3 +166,27 @@ $( "#crystalYellow" ).click(function() {
 
 generateRandoms();
 displayVars();
+
+
+// questions :
+
+// create a span , (boot strap that will wrap around the card with the value of the gem , initial value is = " ??? "
+
+
+///// ---->>> select the image , . addClass to the (border border-success)
+
+
+// how to by-pass the display your number in a win lose condition , without useing the timer, i set up my function to display win number first before the alert "you lose or win " but it will still display the alert first , this leads to a bug that whem you press the button fast, it will execute the code as many times as you press it before te timer runs out...
+ // ---- >>>> asynchronous , async ()
+
+
+// using .one , i want the sound of the opening a crate to be resetted when the gameOver (reset) runs 
+
+// ---- >>> make a variable ( isAcrate ) , if true =isAcrate , execute sound , if not ,not
+
+// i want the sound to run simultenously , because when i play the sound , it waits for the sound of " click" before it plays the lose or win sound ..
+
+// randomize the positions
+
+// ask about submiting early and pushing an update , way past the submition deadline , which version will be graded .
+

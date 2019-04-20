@@ -13,83 +13,133 @@ var randomGem2 = 0;
 var randomGem3 = 0;
 var randomGem4 = 0;
 var storeToBeat = 0;
-var currentCollect = 0;
+var currentCollect =0;
 var wins = 0;
 var loss = 0;
-var randomToBeat =0 ;
+var randomToBeat =0;
 
 // function that generates the random numbers for the round, includes the random gem numbers too!
 function generateRandoms (){
     var min = 1;
-    var max = 10;
+    var max = 50;
     var min1= 1;
-    var max1 = 100;
+    var max1 = 20;
+    //main variable to compare this at 
     randomToBeat = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log("randomNumber " + randomToBeat);
     $("#numToBeat").text(randomToBeat);
     
+    //green gem give out a bad range but give total of high score
     randomGem1 = Math.floor(Math.random() * (max1 - min1+ 1)) + min;
     console.log("Gem1 " + randomGem1);
 
+    //red gem gives out moderate range ,and moderate score
     randomGem2 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
     console.log("Gem2 " + randomGem2);
 
+    //blue gem give good range but low score (1 to 2)
     randomGem3 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
     console.log("Gem3 " + randomGem3);
 
+    //yellow gem give different scores everytime , but highest score ever
     randomGem4 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
     console.log("Gem4 " + randomGem4);
     $("#numToBeat").text(randomToBeat);
+//remove this later
+    alert ("Pick")
 }
 
 //run only once , sets the random numbers , to the respected gems and the number to beat
-generateRandoms();
-
 function displayVars() {
     $("#wins").text(wins);
     $("#loss").text(loss);
     $("#currentCollect").text(currentCollect)
 }
-displayVars();
+
+function roundOver(){
+    currentCollect = 0;
+    displayVars();
+    generateRandoms();
+
+}
+
+
+//function for winning
+function winChecker() {
+    if (currentCollect == randomToBeat)
+    {
+    $("#currentCollect").text(currentCollect)
+    wins++;
+    $("#wins").text(wins);
+    setTimeout(alerter, 300);
+    function alerter() {
+        alert("you win");
+        roundOver();
+};
+    
+
+}
+}
+
+//fucntion for losing , add some stats after
+function gameOver() {
+    $("#currentCollect").text(currentCollect)
+    loss++;
+    $("#loss").text(loss);
+    setTimeout(alerter, 300);
+    function alerter() {
+        alert("you loss");
+        roundOver();
+
+    };
+  
+
+}
 
 /// onclick even for all the crystal colors 
 
 $( "#crystalGreen" ).click(function() {
-    alert( "GREEN" );
-  });
+    // alert( "The value is : " + randomGem1 );
+    currentCollect+=randomGem1;
+    $("#currentCollect").text(currentCollect)
+    if (currentCollect > randomToBeat) {
+        gameOver();
+    }
+    else  winChecker();
+});
 
+  $( "#crystalRed" ).click(function() {
+    // alert( "The value is : " + randomGem1 );
+    currentCollect+=randomGem2;
+    $("#currentCollect").text(currentCollect)
+    if (currentCollect > randomToBeat) {
+        gameOver();
+    }
+    else  winChecker();
+});
 
-$( "#crystalRed" ).click(function() {
-    alert( "RED" );
-  });
-
-$( "#crystalBlue" ).click(function() {
-    alert( "BLUE" );
-  });
-
+  $( "#crystalBlue" ).click(function() {
+    // alert( "The value is : " + randomGem1 );
+    currentCollect+=randomGem3;
+    $("#currentCollect").text(currentCollect)
+    if (currentCollect > randomToBeat) {
+        gameOver();
+    }
+    else  winChecker();
+});
 
 $( "#crystalYellow" ).click(function() {
-    alert( "YELLOW" );
-  });
+    // alert( "The value is : " + randomGem1 );
+    currentCollect+=randomGem4;
+    $("#currentCollect").text(currentCollect)
+    if (currentCollect > randomToBeat) {
+        gameOver();
+    }
+    else  winChecker();
+});
 
 
+//// start the game :
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+generateRandoms();
+displayVars();

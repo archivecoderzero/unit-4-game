@@ -30,7 +30,7 @@
 
 > plays a unique sound when the a crate is opened for the first time each round .
 
-> added a game mechanic for each gem , the GREEN Gem has low range , and a constant , the RED Gem has a high range and a constant, the BLUE Gem has a high initial range but low random subsequent range, while the YELLOW Gem has high range and random subsequent range. 
+> added a game mechanic for each gem , the GREEN Gem has low range , and a constant , the RED Gem has a high range and a constant, the BLUE Gem has a high initial range but low random subsequent range, while the YELLOW Gem has high range and random subsequent range. Note that the BLUE GEM is the only gem that has a "chance" to be 1 . 
 
 
 ### Feel free to improve this framework fellow magicians and stuff :)

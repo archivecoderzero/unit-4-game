@@ -17,7 +17,7 @@ var currentCollect =0;
 var wins = 0;
 var loss = 0;
 var randomToBeat = 0;
-var gemNameGreen = ["Terra" , "Nature" , "Yggrasil" , "the Nature" , "Fortitude" , "Earth" , "Leaf"]
+var gemNameGreen = ["Terra" , "Nature" , "Yggdrasil" , "the Nature" , "Fortitude" , "Earth" , "Leaf"]
 var gemNameRed = ["Flame" , "Ember" , "Amaterasu" , "the Sun" , "Blaze" , "Inferno" , "Burn"]
 var gemNameYellow = ["Gust" , "Freedom" , "Zephyr" , "the Wind" , "Speed" , "Jupiter" , "Pierce"]
 var gemNameBlue = ["Ice" , "Healing" , "Neptune" , "the Atlantis" , "Wave" , "Atlantis" , "Ocean"]
@@ -75,13 +75,12 @@ function generateRandoms (){
     randomGem1 = Math.floor(Math.random() * 10) + 1;
     console.log("Gem1 " + randomGem1);
 
-    //red gem gives out moderate range ,and moderate score
+    //red gem gives out high range ,and moderate score
     var min2 = 20;
     var max2 = 50;
     randomGem2 = Math.floor(Math.random() * (max2 - min2 + 1) + 1);
     console.log("Gem2 " + randomGem2);
 
-    //blue gem give good range but low score (1 to 2)
     var min3 = 2;
     var max3 = 50;
     randomGem3 = Math.floor(Math.random() * (max3 - min3 + 1) + 2);
@@ -212,7 +211,7 @@ $( "#crystalGreen" ).click(function() {
     crateSound3();
     isCrateOpen3 = true;
     $("#gemValue3").text(randomGem3);
-    var min3 = 2;
+    var min3 = 1;
     var max3 = 10;
     //yellow gem give different scores everytime , but highest score ever
     randomGem3 = Math.floor(Math.random() * (max3 - min3 + 1) + 1);
@@ -256,34 +255,6 @@ $( document ).ready(function() {
     
     console.log("Random Number " + randomNamer );
 });
+
 generateRandoms();
-
-
-
-// questions :
-
-// create a span , (boot strap that will wrap around the card with the value of the gem , initial value is = " ??? "
-
-
-///// ---->>> select the image , . addClass to the (border border-success)
-
-
-// how to by-pass the display your number in a win lose condition , without useing the timer, i set up my function to display win number first before the alert "you lose or win " but it will still display the alert first , this leads to a bug that whem you press the button fast, it will execute the code as many times as you press it before te timer runs out...
- // ---- >>>> asynchronous , async ()
-
-
-// using .one , i want the sound of the opening a crate to be resetted when the gameOver (reset) runs 
-
-// ---- >>> make a variable ( isAcrate ) , if true =isAcrate , execute sound , if not ,not
-
-// i want the sound to run simultenously , because when i play the sound , it waits for the sound of " click" before it plays the lose or win sound ..
-
-// --
-
-// randomize the positions
-
-//  create an array ,called crtstal html
-
-
-// ask about submiting early and pushing an update , way past the submition deadline , which version will be graded .
 

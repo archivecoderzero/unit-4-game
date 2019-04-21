@@ -13,9 +13,9 @@
    <body>
 
          <nav class="navbar navbar-light bg-light">
-               <span class="navbar-brand mb-0 h1">Crystal Collector</span>
+               <span class="navbar-brand mb-0 h1">Gem Collector</span>
 
-               <a class="btn btn-success btn-lg" href="#" role="button"> reset</a>
+               <a class="btn btn-success btn-lg" href="#" role="button">reset</a>
              </nav>
 
              <div class="container">
@@ -30,79 +30,93 @@
 
          <div class="jumbotron">
                <h1 class="display-4">Crystal Collector</h1>
-               <p class="lead">Hello adventurer **promt for the users name**, blah blah blah blah </p>
+               <p class="lead">Hello fellow Magicians! Select a gem to match the Wizard's Power level</p>
                <hr class="my-4">
-               <div class=row>
-                     <div class="col-2"></div>
-                  <div class="col-2">
-               <div class="card text-dark border-primary mb-3" style="max-width:150px;max-height:150;">
-                     <div class="card-header">Wins</div>
-                     <div class="card-body">
-                       <h5 class="card-title">The Wins</h5>
-                       <p id=wins class="card-text">??? .</p>
-                     </div>
-                   </div>
-                   </div>
+               <p class="small">Each gem has unique abilities , Earth Gem gives you low but steady power , Fire Gem gives you high offensive power, Wind Gem gives you unpredictable power, while Water Gem gives you erratic power like the calm sea. Choose wisely! </p>
 
-                   <div class="col-2">
-
-                   <div class="card text-dark border-primary mb-3" style="max-width:150px;max-height:150;">
-                        <div class="card-header">Loss</div>
-                        <div class="card-body">
-                          <h5  class="card-title">The Loss</h5>
-                          <p id="loss" class="card-text">???</p>
-                        </div>
-                      </div>
-                      </div>
-
+              </div>
+                    <div class=row>
                       <div class="col-2">
-
-                      <div class="card text-dark border-primary mb-3" style="max-width: 150px;max-height:150;">
-                           <div class="card-header">Cpu Number</div>
+                      <div class="card text-dark bg-light mb-3" style="max-width: 150px;max-height:100;">
+                           <div class="card-header">Wizards's Power</div>
                            <div class="card-body">
-                             <h5 class="card-title">The number</h5>
-                             <p id="numToBeat"></p>
+                             <h5 class="card-title">Match This Power:</h5>
+                             <p id="numToBeat">?</p>
                            </div>
                          </div>
                         </div>
 
                         <div class="col-2">
 
-                         <div class="card text-dark border-primary mb-3" style="max-width:150px;max-height:150;">
-                              <div class="card-header">Your Total</div>
+                         <div class="card text-dark bg-light mb-3" style="max-width:150px;max-height:100;">
+                              <div class="card-header">Mage's Power</div>
                               <div class="card-body">
-                                <h5 class="card-title">The Number</h5>
-                                <p id=currentCollect class="card-text">???</p>
+                                <h5 class="card-title">Current Power:</h5>
+                                <p id=currentCollect class="card-text">?</p>
                               </div>
                             </div>
                             </div>
-                            <div class="col-1"></div>
+                            <div class="col-4">
+
+                                <div class="card text-light bg-secondary mb-3" style="max-width:100;max-height:100%;">
+                                    <div class="card-header" style="font-size: 30px">Your Collection</div>
+                                    <div class="card-body">
+                                      <div class="collection"></div>
+                                    </div>
+                                  </div>
 
 
-             </div>
+
+
+
+
+                            </div>
+
+                              
+                  <div class="col-2">
+               <div class="card text-white bg-dark mb-3" style="max-width:150px;max-height:150;">
+                     <div class="card-header">Wins</div>
+                     <div class="card-body">
+                       <h5 class="card-title">Your Wins</h5>
+                       <p id=wins class="card-text">?</p>
+                     </div>
+                   </div>
+                   </div>
+                   <div class="col-2">
+                   <div class="card text-white bg-dark mb-3" style="max-width:150px;max-height:150;">
+                        <div class="card-header">Loss</div>
+                        <div class="card-body">
+                          <h5  class="card-title">Your Loss</h5>
+                          <p id="loss" class="card-text">?</p>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+
+
+        
 
 
 
 
 
                           <!-- // container div do not touch!!!// container div do not touch!!!// container div do not touch!!! -->
-                        </div>
+                        
 
          <div class=row>
             <!-- Start of the crystal -->
             <div class=col-3>
                   <div class=container>
 
-                      <img id="chest1" class="crystals border border-success" src="assets/images/chest.png"  alt="...">
+                      <img id="chest1" class="crystals" src="assets/images/chest.png"  alt="...">
                   </div>
-
+                  <span id="gemValue1" class="badge badge-success">?</span>
                         <div class="card" style="width: 15rem;">
                               <div class="card-body">
                                  <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
-                                <h5 class="card-title">Crystal GREEN</h5>
-                                <p class="card-text">BLAH BLAH BLAH.</p>
-                                <!-- //get the random name of the crystal to this  -->
-                                <a id=crystalGreen class="btn btn-success">Pick the "Crystal name"</a>
+                                <p class="card-title" >Crystal of : </p>
+                                <p class= "gem green" id="gemName1" >?</p>
+                                <a id=crystalGreen class="btn btn-success">Collect</a>
                               </div>
                             </div>
                            </div>
@@ -115,15 +129,16 @@
       
                               <img id="chest2" class="crystals" src="assets/images/chest.png"  alt="...">
                         </div>
-                              <div class="card" style="width: 15rem;">
-                                    <div class="card-body">
-                                       <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
-                                      <h5 class="card-title">Crystal RED</h5>
-                                      <p class="card-text">CRYSTAL DEFINTION.</p>
-                                      <!-- //get the random name of the crystal to this  -->
-                                      <a id=crystalRed class="btn btn-danger">Pick the "Crystal name"</a>
-                                    </div>
-                                  </div>
+                        <span id="gemValue2" class="badge badge-danger">?</span>
+                        <div class="card" style="width: 15rem;">
+                              <div class="card-body">
+                                 <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
+                                <p class="card-title" >Crystal of : </p>
+                                <p class= "gem red" id="gemName2" >?</p>
+                                <a id=crystalRed class="btn btn-danger">Collect</a>
+                              </div>
+                            </div>
+
                                  </div>
             <!-- End of the crystal -->
 
@@ -134,15 +149,15 @@
             
                                     <img id="chest3" class="crystals" src="assets/images/chest.png"  alt="...">
                               </div>
-                                    <div class="card" style="width: 15rem;">
-                                          <div class="card-body">
-                                             <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
-                                            <h5 class="card-title">Crystal Blue</h5>
-                                            <p class="card-text">CRYSTAL DEFINTION.</p>
-                                            <!-- //get the random name of the crystal to this  -->
-                                            <a  id=crystalBlue class="btn btn-primary">Pick the "Crystal name"</a>
-                                          </div>
-                                        </div>
+                              <span id="gemValue3" class="badge badge-primary">?</span>
+                              <div class="card" style="width: 15rem;">
+                                    <div class="card-body">
+                                       <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
+                                      <p class="card-title" >Crystal of : </p>
+                                      <p class= "gem blue" id="gemName3" >?</p>
+                                      <a id=crystalBlue class="btn btn-primary">Collect</a>
+                                    </div>
+                                  </div>
                                        </div>
                   <!-- End of the crystal -->
 
@@ -152,15 +167,15 @@
                   <div class=container>
                         <img id="chest4" class="crystals" src="assets/images/chest.png" alt="...">
                   </div>
-                        <div class="card" style="width: 15rem;">
-                              <div class="card-body">
-                                 <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
-                                <h5 class="card-title">Crystal Yellow</h5>
-                                <p class="card-text">CRYSTAL DEFINTION.</p>
-                                <!-- //get the random name of the crystal to this  -->
-                                <a id=crystalYellow class="btn btn-warning">Pick the "Crystal name"</a>
-                              </div>
-                            </div>
+                  <span id="gemValue4" class="badge badge-warning">?</span>
+                  <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                           <!-- // RANDOMIZE SOME CRYSTAL NAME TOO .. -->
+                          <p class="card-title" >Crystal of : </p>
+                          <p class= "gem yellow" id="gemName4" >?</p>
+                          <a id=crystalYellow class="btn btn-warning">Collect</a>
+                        </div>
+                      </div>
                            </div>
       <!-- End of the crystal -->
                  </div> 
@@ -175,11 +190,6 @@
                  <script src="assets/javascript/game.js"></script>
 
       <!-- some soundbites -->
-
-      <audio id="open">
-            <source src="open.wav" type="audio/mpeg">
-          </audio>
-
           <audio id="click">
             <source src="click.wav" type="audio/mpeg">
           </audio>
@@ -187,9 +197,8 @@
           <audio id="win">
             <source src="win.wav" type="audio/mpeg">
           </audio>
-
-          <audio id="lose">
-            <source src="lose.wav" type="audio/mpeg">
+          <audio id="loss">
+            <source src="dc1.wav" type="audio/mpeg">
           </audio>
 
 

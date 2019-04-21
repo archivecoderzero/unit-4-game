@@ -22,19 +22,25 @@ body {
     font-family: 'Share Tech Mono', monospace;
 }
 #numToBeat {
-    font-size: 30px;
+    font-size: 35px;
+    text-align: center;
 }
 
 #wins {
-    font-size: 30px;
+    font-size: 35px;
+    text-align: center;
+
 }
 
 #loss {
-    font-size: 30px;
+    font-size: 35px;
+    text-align: center;
+
 }
 
 #currentCollect {
-    font-size: 30px;
+    font-size: 35px;
+    text-align: center;
 }
 
 html {
@@ -46,3 +52,47 @@ body {
     display: grid;
     grid-template-rows: 1fr auto;
   }
+
+
+.btn {
+    margin-left: 32%;
+}
+
+.card-title {
+    font-size : 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.gem.green{
+    font-size : 25px;
+    color : lime;
+    text-align: center;
+    font-weight: 800;
+}
+
+.gem.yellow{
+    font-size : 25px;
+    color : gold;
+    text-align: center;
+    font-weight: 800;
+}
+
+.gem.red{
+    font-size : 25px;
+    color : red;
+    text-align: center;
+    font-weight: 800;
+}
+
+.gem.blue{
+    font-size : 25px;
+    color : slateblue;
+    text-align: center;
+    font-weight: 800;
+}
+
+.theImg {
+    max-width: 30px;
+    max-height: 30px;
+}

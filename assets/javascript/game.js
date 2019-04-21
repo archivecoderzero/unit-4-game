@@ -198,7 +198,6 @@ $( "#crystalGreen" ).click(function() {
     $("#currentCollect").text(currentCollect)
     $("#chest2").attr("src","assets/images/crys2.gif" );
     $( ".collection" ).append('<img class="theImg" src="assets/images/crys2.gif">');
-    $('audio#click')[0].play();
     if (currentCollect > randomToBeat) {
         gameOver();
     }
@@ -219,7 +218,6 @@ $( "#crystalGreen" ).click(function() {
     $("#currentCollect").text(currentCollect)
     $("#chest3").attr("src","assets/images/crys3.gif" );
     $( ".collection" ).append('<img class="theImg" src="assets/images/crys3.gif">');
-    $('audio#click')[0].play();
     if (currentCollect > randomToBeat) {
         gameOver();
     }
@@ -237,7 +235,6 @@ $( "#crystalYellow" ).click(function() {
     randomGem4 = Math.floor(Math.random() * (max4 - min4 + 1) + 1);
     $("#gemName4").text(gemNameYellow[randomNamer])
     $("#gemValue4").text(randomGem4);
-    $('audio#click')[0].play();
     $("#currentCollect").text(currentCollect)
     $("#chest4").attr("src","assets/images/crys4.gif" );
     $( ".collection" ).append('<img class="theImg" src="assets/images/crys4.gif">');

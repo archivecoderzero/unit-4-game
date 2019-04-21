@@ -96,3 +96,19 @@ body {
     max-width: 30px;
     max-height: 30px;
 }
+
+
+.footer {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    }
+ .footercont {
+        width: 100%;
+        background-image: url(../../assets/images/bgfoot.gif);
+        padding: 10px;
+
+    }
+    .small {
+        font-size :20px;
+    }

@@ -83,7 +83,7 @@ function generateRandoms (){
 
     //blue gem give good range but low score (1 to 2)
     var min3 = 2;
-    var max3 = 5;
+    var max3 = 50;
     randomGem3 = Math.floor(Math.random() * (max3 - min3 + 1) + 2);
     console.log("Gem3 " + randomGem3);
     var min4 = 5;
@@ -212,6 +212,10 @@ $( "#crystalGreen" ).click(function() {
     crateSound3();
     isCrateOpen3 = true;
     $("#gemValue3").text(randomGem3);
+    var min3 = 2;
+    var max3 = 10;
+    //yellow gem give different scores everytime , but highest score ever
+    randomGem3 = Math.floor(Math.random() * (max3 - min3 + 1) + 1);
     $("#gemName3").text(gemNameBlue[randomNamer])
     $("#currentCollect").text(currentCollect)
     $("#chest3").attr("src","assets/images/crys3.gif" );
@@ -228,8 +232,8 @@ $( "#crystalYellow" ).click(function() {
     currentCollect+=randomGem4;
     crateSound4();
     isCrateOpen4 = true;
-    var min4 = 5;
-    var max4 = 20;
+    var min4 = 10;
+    var max4 = 30;
     //yellow gem give different scores everytime , but highest score ever
     randomGem4 = Math.floor(Math.random() * (max4 - min4 + 1) + 1);
     $("#gemName4").text(gemNameYellow[randomNamer])

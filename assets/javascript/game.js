@@ -21,39 +21,75 @@ var gemNameGreen = ["Terra" , "Nature" , "Yggrasil" , "the Nature" , "Fortitude"
 var gemNameRed = ["Flame" , "Ember" , "Amaterasu" , "the Sun" , "Blaze" , "Inferno" , "Burn"]
 var gemNameYellow = ["Gust" , "Freedom" , "Zephyr" , "the Wind" , "Speed" , "Jupiter" , "Pierce"]
 var gemNameBlue = ["Ice" , "Healing" , "Neptune" , "the Atlantis" , "Wave" , "Atlantis" , "Ocean"]
-var isCrateOpen = False;
-
 
 // function that generates the random numbers for the round, includes the random gem numbers too!////
 
-function crateSound() {}
+var isCrateOpen1 = false ;
+function crateSound1() {
+    if (isCrateOpen1 === false) {
+        $('audio#open')[0].play();
+    }
+    else {$('audio#click')[0].play();}
+
+}
+
+var isCrateOpen2 = false ;
+function crateSound2() {
+    if (isCrateOpen2 === false) {
+        $('audio#open')[0].play();
+    }
+    else {$('audio#click')[0].play();}
+
+}
+
+var isCrateOpen3 = false ;
+function crateSound3() {
+    if (isCrateOpen3 === false) {
+        $('audio#open')[0].play();
+    }
+    else {$('audio#click')[0].play();}
+
+}
+
+var isCrateOpen4 = false ;
+function crateSound4() {
+    if (isCrateOpen4 === false) {
+        $('audio#open')[0].play();
+    }
+    else {$('audio#click')[0].play();}
+
+}
 
 
 
 function generateRandoms (){
     var min = 30;
-    var max = 50;
-    var min1= 1;
-    var max1 = 20;
+    var max = 100;
+ 
     //main variable to compare this at 
     randomToBeat = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log("randomNumber " + randomToBeat);
     $("#numToBeat").text(randomToBeat);
     
     //green gem give out a bad range but give total of high score
-    randomGem1 = Math.floor(Math.random() * (max1 - min1+ 1)) + min;
+    randomGem1 = Math.floor(Math.random() * 10) + 1;
     console.log("Gem1 " + randomGem1);
 
     //red gem gives out moderate range ,and moderate score
-    randomGem2 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
+    var min2 = 20;
+    var max2 = 50;
+    randomGem2 = Math.floor(Math.random() * (max2 - min2 + 1) + 1);
     console.log("Gem2 " + randomGem2);
 
     //blue gem give good range but low score (1 to 2)
-    randomGem3 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
+    var min3 = 2;
+    var max3 = 5;
+    randomGem3 = Math.floor(Math.random() * (max3 - min3 + 1) + 2);
     console.log("Gem3 " + randomGem3);
-
+    var min4 = 5;
+    var max4 = 30;
     //yellow gem give different scores everytime , but highest score ever
-    randomGem4 = Math.floor(Math.random() * (max1 - min1 + 1)) + min;
+    randomGem4 = Math.floor(Math.random() * (max4 - min4 + 1) + 1);
     console.log("Gem4 " + randomGem4);
     $("#numToBeat").text(randomToBeat);
 
@@ -111,6 +147,10 @@ function resetImage(){
     $("#gemName3").text("?")
     $("#gemName4").text("?")
     $( ".collection" ).html("");
+    isCrateOpen1 = false;
+    isCrateOpen2 = false;
+    isCrateOpen3 = false;
+    isCrateOpen4 = false;
 }
 
 //fucntion for losing , add some stats after
@@ -135,11 +175,12 @@ function gameOver() {
 
 $( "#crystalGreen" ).click(function() {
     // alert( "The value is : " + randomGem1 );
+    crateSound1();
+    isCrateOpen1 = true;
     currentCollect+=randomGem1;
     $("#chest1").attr("src","assets/images/crys1.gif" );
     $( ".collection" ).append('<img class="theImg" src="assets/images/crys1.gif">');
     $("#gemName1").text(gemNameGreen[randomNamer])
-    $('audio#click')[0].play();
     $("#gemValue1").text(randomGem1);
     $("#currentCollect").text(currentCollect);
     if (currentCollect > randomToBeat) {
@@ -151,6 +192,8 @@ $( "#crystalGreen" ).click(function() {
   $( "#crystalRed" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem2;
+    crateSound2();
+    isCrateOpen2 = true;
     $("#gemName2").text(gemNameRed[randomNamer])
     $("#gemValue2").text(randomGem2);
     $("#currentCollect").text(currentCollect)
@@ -166,6 +209,8 @@ $( "#crystalGreen" ).click(function() {
   $( "#crystalBlue" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem3;
+    crateSound3();
+    isCrateOpen3 = true;
     $("#gemValue3").text(randomGem3);
     $("#gemName3").text(gemNameBlue[randomNamer])
     $("#currentCollect").text(currentCollect)
@@ -181,6 +226,12 @@ $( "#crystalGreen" ).click(function() {
 $( "#crystalYellow" ).click(function() {
     // alert( "The value is : " + randomGem1 );
     currentCollect+=randomGem4;
+    crateSound4();
+    isCrateOpen4 = true;
+    var min4 = 5;
+    var max4 = 20;
+    //yellow gem give different scores everytime , but highest score ever
+    randomGem4 = Math.floor(Math.random() * (max4 - min4 + 1) + 1);
     $("#gemName4").text(gemNameYellow[randomNamer])
     $("#gemValue4").text(randomGem4);
     $('audio#click')[0].play();
